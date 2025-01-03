@@ -1,0 +1,651 @@
+:root {
+    --pink: #e84393;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden; /* ป้องกันไม่ให้เนื้อหาล้นออกจากขอบ */
+}
+
+
+section {
+    padding: 2rem 5%;
+    width: 100%;
+}
+
+.heading{
+    text-align: center;
+    font-size: 4rem;
+    color: #333;
+    padding: 1rem;
+    margin: 2rem 0;
+    background: rgba(255, 51, 153, .05);
+}
+.heading span{
+    color: var(--pink);
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: #333;
+    color: #fff;
+    padding: 1.5rem 4rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+
+.btn:hover {
+    background: var(--pink); /* แก้ไขการพิมพ์คำว่า "hover" */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+header .logo {
+    font-size: 3rem;
+    color: #333;
+    font-weight: bolder;
+}
+
+header .logo span {
+    color: var(--pink);
+}
+
+header .navbar a {
+    font-size: 2rem;
+    padding: 0 1.5rem;
+    color: #666;
+}
+
+header .navbar a:hover {
+    color: var(--pink);
+}
+
+header .icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* จัดไอคอนให้อยู่ทางซ้าย */
+    gap: 2rem; /* กำหนดระยะห่างระหว่างไอคอน */
+    flex-wrap: nowrap; /* ไม่ให้ไอคอนตกลงมา */
+}
+
+
+header .icons a {
+    font-size: 2.5rem;
+    color: #333;
+    margin-left: 1.5rem;
+}
+
+header .icons a:hover {
+    color: var(--pink);
+}
+
+header #toggler {
+    display: none;
+}
+
+header #toggler:checked ~ .navbar {
+    display: flex; /* ทำให้เมนูแสดง */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    flex-direction: column; /* แสดงเมนูในแนวตั้ง */
+    gap: 1.5rem;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+header .fa-bars {
+    font-size: 3rem;
+    color: #333;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    border: .1rem solid rgba(0, 0, 0, .3);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 3.5rem;
+    color: var(--dark-gray);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo-img {
+    width: 50px; /* ปรับขนาดโลโก้ */
+    height: 50px;
+    margin-right: 10px; /* เพิ่มระยะห่างระหว่างโลโก้กับข้อความ */
+    object-fit: contain;
+    border-radius: 50%; /* ถ้าต้องการให้โลโก้มีขอบโค้งมน */
+}
+
+.home {
+    display: flex;
+    align-items: center; /* จัดข้อความให้อยู่ตรงกลางในแนวตั้ง */
+    justify-content: flex-start; /* จัดข้อความให้อยู่ชิดซ้าย */
+    min-height: 100vh; /* ทำให้ส่วนนี้มีความสูงเต็มหน้าจอ */
+    background-image: url('./png/flower.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-left: 5%; /* เพิ่มระยะห่างจากขอบซ้าย */
+}
+
+.home .content {
+    max-width: 70rem; /* จำกัดความกว้างของข้อความ */
+    margin-left: 3rem; /* ลดระยะขอบซ้าย */
+}
+
+.home .content h3 {
+    font-size: 5rem; /* ลดขนาดข้อความหัวข้อ */
+    color: #333;
+    margin-bottom: 1rem; /* เพิ่มระยะห่างด้านล่าง */
+}
+
+.home .content span {
+    font-size: 2.5rem; /* ปรับขนาดข้อความรอง */
+    color: var(--pink);
+    line-height: 1.5;
+}
+
+.home .content p {
+    font-size: 1.4rem;
+    color: #666;
+    margin-bottom: 2rem; /* เพิ่มระยะห่างระหว่างข้อความกับปุ่ม */
+}
+
+.about .row{
+    display: flex;
+    align-items: center;
+    gap:2rem;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+}
+
+.about .row .video-container{
+    flex: 1 1 40rem;
+    position: relative;
+
+}
+.about .row .video-container video{
+    width:100% ;
+    border: 1.5rem solid #fff;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    
+}
+
+.about .row .video-container h3{
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    font-size: 3rem;
+    background: #fff;
+    padding:1rem 2rem ;
+    text-align:center ;
+    mix-blend-mode: screen;
+
+}
+
+.about .row .content{
+    flex: 1 1 40rem;
+}
+
+.about .row .content h3{
+    font-size: 3rem;
+    color:#333;
+}
+
+.about .row .content p{
+    font-size: 1.5rem;
+    color: #999;
+    padding: .5rem 0;
+    padding-top: 5rem;
+    line-height: 1.5;
+}
+
+
+.icons-container{
+    background: #eee;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+}
+
+.icons-container .icons{
+    background: #fff;
+    border: .1rem solid rgba(0, 0, 0, .1);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    flex: 1 1 25rem;
+}
+
+.icons-container .icons img{
+    height: 5rem;
+    margin-right: 2rem;
+}
+
+.icons-container .icons h3{
+    color: #333;
+    padding-bottom: 5rem;
+    font-size: 1.5rem;
+}
+
+.icons-container .icons span{
+    color: #555;
+    font-size: 1.3rem;
+}
+
+.products .box-container{
+    padding: 0 7rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.products .box-container .box{
+    flex: 1 1 calc(33.33% - 1rem);  /* ปรับให้แสดง 3 กล่องในแถว */
+    box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .1);  /* ลดขนาดเงา */
+    border-radius: 2rem;  /* ลดขนาดมุมโค้ง */
+    border: .5rem solid rgba(0, 0, 0, .05);  /* ลดขนาดขอบ */
+    position: relative;
+    padding: 1rem;
+    
+}
+
+.products .box-container .box .discount{
+    position: absolute;
+    top: 1rem; left: 1rem;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    color: var(--pink);
+    background: rgba(255, 51, 153, .05);
+    z-index: 1;
+    border-radius: .5rem;
+}
+
+.products .box-container .box .image{
+    position: relative;
+    text-align: center;
+    padding-top: 2rem;
+    overflow: hidden;
+}
+
+.products .box-container .box .image img{
+    height: 25rem;
+
+}
+
+.products .box-container .box:hover .image img{
+    transform: scale(1.1);
+    
+}
+
+.products .box-container .box .image .icons{
+    position: absolute;
+    bottom: -7rem; left: 0;right: 0;
+    display: flex;
+}
+
+.products .box-container .box:hover .image .icons{
+    bottom: 0;
+} 
+
+.container, .box-container, .home, .about, .products {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.products .box-container .box .image .icons a{
+height: 5rem;
+line-height: 5rem;
+font-size: 2rem;
+width: 50%;
+background: var(--pink);
+color: #fff;
+}
+
+.products .box-container .box .image .icons .cart-btn{
+    border-left: .1rem solid #fff;
+    border-right: .1rem solid #fff;
+    width: 100%;
+}
+
+.products .box-container .box .image .icons a:hover{
+    background: #333;
+}
+
+.products .box-container .box .content{
+    padding: 2rem;
+    text-align: center;
+}
+
+.products .box-container .box .content h3{
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.products .box-container .box .content .price{
+    font-size: 2.5rem;
+    color: var(--pink);
+    font-weight: bolder;
+    padding-top: 1rem;
+}
+
+.products .box-container .box .content .price span{
+    font-size: 1.5rem;
+    color: #999;
+    font-weight: lighter;
+    padding-top: 1rem;
+    text-decoration: line-through;
+}
+
+.review .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.review .box-container .box{
+    flex: 1 1 30rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    border-radius: 5rem;
+    padding: 3rem 2rem;
+    position: relative;
+}
+
+.review .box-container .box .fa-quote-right{
+    position: absolute;
+    bottom: 3rem;right: 3rem;
+    font-size: 6rem;
+    color: #eee;
+}
+
+.review .box-container .box .srars i{
+    color: var(--pink);
+    font-size: 2rem;
+}
+
+.review .box-container .box .p{
+    color: #999;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding-top: 2rem;
+}
+
+.review .box-container .box .user{
+    display: flex;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.review .box-container .box .user img{
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+.review .box-container .box .user h3{
+    font-size: 2rem;
+    color: #333;
+}
+
+.review .box-container .box .user h3{
+    font-size: 1.5rem;
+    color: #999;
+}
+
+.contact {
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* จัดให้ข้อความและไอคอนอยู่กลางแนวตั้ง */
+    justify-content: center; /* จัดให้ข้อความและไอคอนอยู่กลางแนวนอน */
+    background-color: #f9f9f9;
+    text-align: center; /* จัดข้อความให้อยู่กลาง */
+}
+
+.contact h2.section-heading {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.contact p {
+    font-size: 1.6rem;
+    color: #666;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto; /* จัดให้ข้อความย่อหน้าตรงกลาง */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* จัดไอคอนให้ตรงกลาง */
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: inline-block;
+    font-size: 3rem;
+    color: #fff;
+    padding: 3rem;
+    border-radius: 50%;
+    background-color: #555;
+    border: 2px solid #fff;
+    transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icon:hover {
+    background-color: #e84393;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon i {
+    font-size: 2.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover i {
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    
+    header .navbar {
+        display: none; /* ซ่อนเมนูในมือถือ */
+    }
+
+    header #toggler:checked ~ .navbar {
+        display: flex; /* แสดงเมนูเมื่อคลิกแฮมเบอร์เกอร์ */
+    }
+    .social-icons {
+        gap: 1.5rem; /* ลดระยะห่างไอคอนบนหน้าจอขนาดเล็ก */
+    }
+
+    .social-icon {
+        font-size: 3rem; /* ปรับขนาดไอคอนบนมือถือ */
+        padding: 1rem;
+        width: 3.5rem; /* ปรับขนาดให้เล็กลงบนมือถือ */
+        height: 3.5rem; /* ปรับขนาดให้เล็กลงบนมือถือ */
+    }
+}
+
+@media (min-width: 991px) {
+    header .fa-bars {
+        display: none; /* ซ่อนแฮมเบอร์เกอร์ */
+    }
+
+    header .navbar {
+        display: block; /* แสดงเมนูปกติ */
+    }
+    section{
+        padding: 2rem;
+    }
+    .home{
+        background-position: left;
+    }
+    .icons-container .icons {
+        flex: 1 1 20rem; /* ลดขนาดให้เหมาะสมเมื่อหน้าจอเล็กลง */
+    }
+
+    .icons-container .icons img {
+        height: 4rem;  /* ลดขนาดไอคอน */
+    }
+
+    .icons-container .icons h3 {
+        font-size: 1.3rem; /* ลดขนาดข้อความ */
+    }
+
+    .icons-container .icons span {
+        font-size: 1.1rem; /* ลดขนาดข้อความรอง */
+    }
+}
+
+@media (max-width: 768px) {
+    header .fa-bars {
+        display: block; /* แสดงแฮมเบอร์เกอร์เมื่อหน้าจอเล็กกว่า 991px */
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #eee;
+        border-top: .1rem solid rgba(0, 0, 0, .1);
+        display: none; /* ซ่อน navbar ตอนแรก */
+    }
+
+    header #toggler:checked ~ .navbar {
+        display: block; /* แสดง navbar เมื่อ checkbox ถูกเลือก */
+    }
+
+    header .navbar a {
+        margin: 1.5rem;
+        padding: 1.5rem;
+        background-color: #fff;
+        border: .1rem solid rgba(0, 0, 0, .1);
+        display: block;
+        text-align: center;
+    }
+    .home .content h3{
+        font-size: 5rem;
+    }
+    .home .content span{
+        font-size: 2.5rem;
+    }
+    .icons-container {
+        flex-direction: column; /* เปลี่ยนให้แสดงไอคอนเป็นแนวตั้ง */
+        align-items: center; /* จัดไอคอนให้อยู่ตรงกลาง */
+        gap: 1rem; /* ลดระยะห่างระหว่างไอคอน */
+    }
+
+    .icons-container .icons {
+        flex: 1 1 auto; /* ให้ไอคอนแต่ละตัวมีขนาดเท่ากัน */
+        padding: 1rem; /* ลดระยะห่างภายใน */
+        width: 100%; /* ให้ไอคอนเต็มความกว้างของ container */
+        text-align: center; /* จัดไอคอนให้อยู่ตรงกลาง */
+    }
+    .social-icons {
+        gap: 1.5rem;
+    }
+
+    .social-icon {
+        font-size: 2.5rem;
+        padding: 1.5rem;
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+    .heading{
+        font-size: 3rem;
+    }
+    html {
+        font-size: 50%;
+    }
+    .contact h2.section-heading {
+        font-size: 2.5rem;
+    }
+    .contact p {
+        font-size: 1.4rem;
+    }
+    .icons-container .icons {
+        flex: 1 1 10rem; /* ให้แต่ละไอคอนมีความกว้างน้อยลงในหน้าจอขนาดเล็ก */
+        padding: .5rem;  /* ลดระยะห่างภายใน */
+    }
+
+    .icons-container .icons img {
+        height: 3rem; /* ลดขนาดไอคอน */
+    }
+
+    .icons-container .icons h3 {
+        font-size: 1rem; /* ลดขนาดข้อความ */
+    }
+
+    .icons-container .icons span {
+        font-size: .9rem; /* ลดขนาดข้อความรอง */
+    }
+}

@@ -1,0 +1,228 @@
+:root {
+    --pink: #e84393;
+    --light-pink: #f8d7e3;
+    --light-gray: #f9f9f9;
+    --dark-gray: #333;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --hover-shadow: rgba(0, 0, 0, 0.2);
+    --gradient: linear-gradient(135deg, #e84393, #ff6f61);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all 0.3s ease-in-out;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+    background: var(--light-gray);
+}
+
+body {
+    color: var(--dark-gray);
+    line-height: 1.6;
+    background: var(--light-gray);
+}
+
+/* Section Styling */
+section {
+    padding: 4rem 10%;
+    margin-top: 7rem;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+/* Heading Styling */
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+    color: var(--dark-gray);
+    padding: 2rem;
+    margin: 6rem 0 3rem;
+    background: rgba(255, 51, 153, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.heading span {
+    color: var(--pink);
+    font-weight: bold;
+    text-shadow: 0 3px 5px var(--shadow-color);
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    margin-top: 2.5rem;
+    border-radius: 50px;
+    background: var(--gradient);
+    color: #fff;
+    padding: 1.5rem 4rem;
+    cursor: pointer;
+    font-size: 1.8rem;
+    font-weight: bold;
+    box-shadow: 0 8px 20px var(--shadow-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px var(--hover-shadow);
+}
+
+/* Header Styling */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 2.5rem 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+header .logo {
+    font-size: 3.5rem;
+    color: var(--dark-gray);
+    font-weight: bold;
+}
+
+header .logo span {
+    color: var(--pink);
+}
+
+header .navbar a {
+    font-size: 2rem;
+    padding: 0 1.5rem;
+    color: var(--dark-gray);
+    font-weight: 500;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+header .navbar a:hover {
+    color: var(--pink);
+    text-shadow: 0 3px 5px var(--shadow-color);
+}
+
+header .icons a {
+    font-size: 2.5rem;
+    color: var(--dark-gray);
+    margin-left: 1.5rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+header .icons a:hover {
+    color: var(--pink);
+    transform: scale(1.2);
+}
+
+/* About Section */
+.container-about {
+    text-align: center;
+    padding: 70px 5%;
+    background: var(--light-pink);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    margin-top: 7rem;
+}
+
+.h1-about {
+    color: var(--dark-gray);
+    margin-bottom: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 4rem;
+    text-shadow: 1px 1px 3px var(--shadow-color);
+}
+
+/* Member Cards */
+.members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.member {
+    width: calc(50% - 20px);
+    text-align: center;
+    margin-bottom: 40px;
+    background: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 15px var(--shadow-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px var(--hover-shadow);
+}
+
+.member img {
+    width: 100%;
+    max-width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: transform 0.3s ease, border 0.3s ease;
+    border: 5px solid transparent;
+}
+
+.member img:hover {
+    transform: scale(1.1);
+    border: 5px solid var(--pink);
+}
+
+.member p {
+    margin-top: 15px;
+    font-size: 1.8rem;
+    color: var(--dark-gray);
+    font-weight: 500;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .member {
+        width: calc(50% - 20px);
+    }
+
+    .btn {
+        font-size: 1.6rem;
+        padding: 1.2rem 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .member {
+        width: 100%;
+    }
+
+    .h1-about {
+        font-size: 2.5rem;
+    }
+
+    .container-about {
+        padding: 30px 10px;
+    }
+
+    .btn {
+        font-size: 1.4rem;
+        padding: 1rem 2rem;
+    }
+}
